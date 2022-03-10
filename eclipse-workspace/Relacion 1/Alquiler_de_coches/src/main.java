@@ -19,7 +19,7 @@ public class main {
 		String matricula;
 		String marca;
 		String modelo;
-		String color;
+		String color = null;
 		SimpleDateFormat f_alta;
 		SimpleDateFormat f_baja;
 		int kms; 
@@ -30,7 +30,7 @@ public class main {
 		int t_recarga;	//Vehículos electricos
 		
 		int cilindrada;
-		String carnet;
+		String carnet = null;
 		
 		menu.subrayaTexto("Alquiler de vehículos");
 		menu.escribeArray(opc);
@@ -59,9 +59,29 @@ public class main {
 							System.out.println("");							
 							menu.subrayaTexto("¿Qué acción deseas realizar sobre las oficinas?");
 							menu.escribeArray(opcEmpre);	
-							break;
+							opcion = sc.nextInt();
 							
-						
+							
+							if(opcion == 1) {
+								System.out.println("Escribe la localidad de la oficina");
+								String LocOfi = sc.nextLine();
+								
+								System.out.println("Escribe el codigo de la oficina");								
+								String codOfi  = sc.nextLine();
+								
+								System.out.println("Descripción");
+								String descOfi = sc.nextLine();
+								
+								System.out.println("aeropuerto");
+								char aeroOfi = sc.next().charAt(0);
+								
+								Oficina o = new Oficina(codOfi, carnet, LocOfi, descOfi, aeroOfi);
+								ofi[0]=o;
+								
+								for(int i = 0; i < ofi.length; i++) {
+						            System.out.println(ofi[i]);
+						        }
+							}
 							
 							
 						}
